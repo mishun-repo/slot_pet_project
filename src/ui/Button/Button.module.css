@@ -1,0 +1,101 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  user-select: none;
+  position: relative;
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Sizes */
+.sm {
+  height: 36px;
+  padding: 0 14px;
+  font-size: 14px;
+}
+
+.md {
+  height: 48px;
+  padding: 0 20px;
+  font-size: 16px;
+}
+
+.lg {
+  height: 64px;
+  padding: 0 28px;
+  font-size: 18px;
+}
+
+/* Variants */
+.primary {
+  background: linear-gradient(180deg, #ffd54f 0%, #ffb300 100%);
+  color: #1a1a1a;
+  box-shadow: 0 4px 0 #c68400;
+}
+
+.primary:hover:not(:disabled) {
+  filter: brightness(1.05);
+}
+
+.primary:active:not(:disabled) {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 #c68400;
+}
+
+.secondary {
+  background: #2a2a2a;
+  color: #fff;
+  border: 1px solid #444;
+}
+
+.spin {
+  background: linear-gradient(180deg, #ff6b35 0%, #e63900 100%);
+  color: white;
+  box-shadow: 0 6px 0 #b32d00;
+  min-width: 140px;
+  font-size: 20px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.spin:hover:not(:disabled) {
+  filter: brightness(1.08);
+}
+
+.spin:active:not(:disabled) {
+  transform: translateY(3px);
+  box-shadow: 0 3px 0 #b32d00;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.loading {
+  pointer-events: none;
+}
+
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,83 @@
+.root {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.root > * {
+  pointer-events: auto;
+}
+
+/* ===== Левая нижняя группа (Menu + Fullscreen) ===== */
+.leftGroup {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ===== Правая верхняя группа (Sound + Game info) ===== */
+.rightGroup {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+/* ===== Центральная группа ===== */
+.centerGroup {
+  position: absolute;
+  bottom: 24px;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 0;
+  padding: 0 120px; /* место под боковые кнопки */
+  pointer-events: none;
+}
+
+.centerGroup > * {
+  pointer-events: auto;
+}
+
+/* Баланс — левее центра */
+.centerGroup > :nth-child(1) {
+  position: absolute;
+  left: 18%;
+  bottom: 0;
+}
+
+/* Сообщение GOOD LUCK — строго центр */
+.centerGroup > :nth-child(2) {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0px; /* чуть выше bet-блока */
+}
+
+/* BetControls — правее центра */
+.centerGroup > :nth-child(3) {
+  position: absolute;
+  right: 18%;
+  bottom: 0;
+}
+
+/* ===== Спин-группа (правый центр) ===== */
+.spinGroup {
+  position: absolute;
+  right: 28px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}

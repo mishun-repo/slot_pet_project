@@ -1,0 +1,26 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 110px;
+  flex-shrink: 0;
+}
+
+.cell {
+  height: 110px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Простая анимация «тряски» во время спина */
+.spinning .cell {
+  animation: reelShake 0.12s linear infinite;
+}
+
+@keyframes reelShake {
+  0%   { transform: translateY(0); }
+  25%  { transform: translateY(-4px); }
+  50%  { transform: translateY(0); }
+  75%  { transform: translateY(4px); }
+  100% { transform: translateY(0); }
+}

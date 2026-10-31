@@ -1,0 +1,110 @@
+.root {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: #1a1a1a;
+  border-radius: 12px;
+  padding: 4px;
+  user-select: none;
+}
+
+.sideButton {
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 10px;
+  background: #2c2c2c;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s ease;
+  position: relative;
+}
+
+.sideButton:hover:not(:disabled) {
+  background: #3a3a3a;
+}
+
+.sideButton:active:not(:disabled) {
+  background: #222;
+}
+
+.sideButton.disabled,
+.sideButton:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+/* Иконка минуса */
+.iconMinus {
+  width: 14px;
+  height: 2px;
+  background: #fff;
+  border-radius: 1px;
+}
+
+/* Иконка плюса */
+.iconPlus {
+  position: relative;
+  width: 14px;
+  height: 14px;
+}
+
+.iconPlus::before,
+.iconPlus::after {
+  content: '';
+  position: absolute;
+  background: #fff;
+  border-radius: 1px;
+}
+
+.iconPlus::before {
+  width: 14px;
+  height: 2px;
+  top: 6px;
+  left: 0;
+}
+
+.iconPlus::after {
+  width: 2px;
+  height: 14px;
+  top: 0;
+  left: 6px;
+}
+
+/* Центральная кнопка */
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 110px;
+  height: 44px;
+  padding: 0 12px;
+  border: none;
+  border-radius: 10px;
+  background: #252525;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.center:hover {
+  background: #303030;
+}
+
+.value {
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffd54f;
+  line-height: 1.1;
+}
+
+.label {
+  font-size: 10px;
+  font-weight: 600;
+  color: #888;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-top: 1px;
+}

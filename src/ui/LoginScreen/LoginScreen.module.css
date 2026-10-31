@@ -1,0 +1,59 @@
+.root {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0d0d0d;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.card {
+  width: 100%;
+  max-width: 360px;
+  padding: 32px;
+  background: #1a1a1a;
+  border-radius: 20px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #ffd54f;
+  text-align: center;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #888;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.input {
+  height: 48px;
+  padding: 0 16px;
+  border: 1px solid #333;
+  border-radius: 12px;
+  background: #111;
+  color: #eee;
+  font-size: 16px;
+  outline: none;
+}
+
+.input:focus {
+  border-color: #ffd54f;
+}
+
+.input:disabled {
+  opacity: 0.6;
+}
+
+.error {
+  color: #ef5350;
+  font-size: 13px;
+  text-align: center;
+}

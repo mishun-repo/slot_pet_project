@@ -1,0 +1,71 @@
+.root {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 18px;
+  user-select: none;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.08);
+}
+
+.label {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Подсветка выигрыша */
+.highlighted {
+  transform: scale(1.05);
+  box-shadow: 0 0 16px 4px rgba(255, 213, 79, 0.55);
+  z-index: 2;
+}
+
+/* ===== Цвета символов (пока вместо картинок) ===== */
+
+.s1 { /* 7 */
+  background: linear-gradient(160deg, #ff4d4d, #b30000);
+  color: #fff;
+}
+
+.s2 { /* BAR */
+  background: linear-gradient(160deg, #5c5c5c, #2a2a2a);
+  color: #ffd54f;
+}
+
+.s3 { /* Watermelon */
+  background: linear-gradient(160deg, #4caf50, #1b5e20);
+  color: #fff;
+}
+
+.s4 { /* Lemon */
+  background: linear-gradient(160deg, #ffee58, #f9a825);
+  color: #333;
+}
+
+.s5 { /* Orange */
+  background: linear-gradient(160deg, #ff9800, #e65100);
+  color: #fff;
+}
+
+.s6 { /* Apple */
+  background: linear-gradient(160deg, #ef5350, #c62828);
+  color: #fff;
+}
+
+.s7 { /* Pear */
+  background: linear-gradient(160deg, #9ccc65, #558b2f);
+  color: #fff;
+}
+
+.s8 { /* Plum */
+  background: linear-gradient(160deg, #ab47bc, #6a1b9a);
+  color: #fff;
+}
+
+.s9 { /* Cherry */
+  background: linear-gradient(160deg, #ec407a, #880e4f);
+  color: #fff;
+}

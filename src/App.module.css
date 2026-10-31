@@ -1,0 +1,381 @@
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.root {
+  width: 100%;
+  height: 100%;
+  background: #0d0d0d;
+  position: relative;
+  overflow: hidden;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.gameArea {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.placeholder {
+  color: #444;
+  font-size: 18px;
+  border: 2px dashed #333;
+  padding: 40px 60px;
+  border-radius: 16px;
+}
+
+/* Общие кнопки-иконки */
+.iconButton {
+  width: 52px;
+  height: 52px;
+  border: none;
+  border-radius: 14px;
+  background: #2c2c2c;
+  color: #ddd;
+  font-size: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s ease, opacity 0.15s ease;
+}
+
+.iconButton:hover:not(:disabled) {
+  background: #3a3a3a;
+}
+
+.iconButton.disabled,
+.iconButton:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.autoplayIcon {
+  width: 22px;
+  height: 16px;
+  position: relative;
+  border-left: 3px solid #ffd54f;
+}
+
+.autoplayIcon::before {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 0;
+  width: 16px;
+  height: 2px;
+  background: #ffd54f;
+  box-shadow: 0 7px 0 #ffd54f, 0 14px 0 #ffd54f;
+}
+
+/* Инфо справа */
+.gameInfo {
+  text-align: right;
+  color: #a8a7a7;
+  margin-top: 4px;
+}
+
+.gameTitle {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.gameTime {
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+/* Баланс */
+.balanceBlock {
+  text-align: center;
+}
+
+.balanceValue {
+  font-size: 22px;
+  font-weight: 700;
+  color: #ffd54f;
+}
+
+.balanceLabel {
+  font-size: 11px;
+  color: #888;
+  letter-spacing: 0.5px;
+  margin-top: 2px;
+}
+
+/* Сообщение */
+.messageBlock {
+  min-height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.message {
+  font-size: 20px;
+  font-weight: 700;
+  color: #eee;
+  letter-spacing: 1px;
+}
+
+/* Модалки — старые стили */
+.betList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 220px;
+}
+
+.betItem {
+  padding: 14px 20px;
+  border: none;
+  border-radius: 10px;
+  background: #2a2a2a;
+  color: #eee;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease;
+  text-align: center;
+}
+
+.betItem:hover {
+  background: #363636;
+}
+
+.betItemActive {
+  background: linear-gradient(180deg, #ffd54f 0%, #ffb300 100%);
+  color: #1a1a1a;
+}
+
+.autoplayContent {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  min-width: 280px;
+  padding-top: 8px;
+}
+
+.startButton {
+  margin-top: 12px;
+}
+
+/* ===== Иконки ===== */
+
+.iconMenu {
+  width: 18px;
+  height: 14px;
+  border-top: 2px solid #ddd;
+  border-bottom: 2px solid #ddd;
+  position: relative;
+}
+.iconMenu::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 2px;
+  background: #ddd;
+  transform: translateY(-50%);
+}
+
+.iconFullscreen {
+  width: 16px;
+  height: 16px;
+  border: 2px solid #ddd;
+  border-radius: 2px;
+}
+
+.iconFullscreenExit {
+  width: 14px;
+  height: 14px;
+  border: 2px solid #ffd54f;
+  border-radius: 2px;
+  box-shadow: inset 0 0 0 2px #2c2c2c;
+}
+
+/* ===== Sound On (динамик + волны) ===== */
+/* ===== Sound On ===== */
+.iconSoundOn {
+  position: relative;
+  width: 20px;
+  height: 16px;
+}
+
+/* Корпус динамика */
+.iconSoundOn::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 4px;
+  width: 6px;
+  height: 8px;
+  background: #ddd;
+  border-radius: 1px 0 0 1px;
+}
+
+/* Раструб */
+.iconSoundOn::after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 1px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 7px 0 7px 9px;
+  border-color: transparent transparent transparent #ddd;
+}
+
+/* Волны */
+.iconSoundOn {
+  box-shadow: 
+    11px -1px 0 -3px #ddd,
+    11px 1px 0 -3px #ddd,
+    14px -3px 0 -4px #ddd,
+    14px 3px 0 -4px #ddd;
+}
+
+/* ===== Sound Off (динамик + крестик) ===== */
+.iconSoundOff {
+  position: relative;
+  width: 18px;
+  height: 16px;
+  opacity: 0.7;
+}
+
+.iconSoundOff::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 3px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 5px 0 5px 7px;
+  border-color: transparent transparent transparent #888;
+}
+
+.iconSoundOff::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 5px;
+  width: 5px;
+  height: 6px;
+  background: #888;
+}
+
+/* Крестик */
+.iconSoundOff {
+  background:
+    linear-gradient(45deg, transparent 42%, #e74c3c 42%, #e74c3c 58%, transparent 58%),
+    linear-gradient(-45deg, transparent 42%, #e74c3c 42%, #e74c3c 58%, transparent 58%);
+  background-size: 12px 12px;
+  background-position: 8px 2px;
+  background-repeat: no-repeat;
+}
+
+.turboIcon {
+  font-size: 13px;
+  font-weight: 700;
+  color: #ffd54f;
+  letter-spacing: 0.5px;
+}
+
+.soundOn {
+  position: relative;
+  width: 22px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.soundOn::before {
+  content: '';
+  width: 6px;
+  height: 8px;
+  background: #ddd;
+  border-radius: 1px 0 0 1px;
+}
+
+.soundOn::after {
+  content: '';
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 7px 0 7px 8px;
+  border-color: transparent transparent transparent #ddd;
+  margin-left: -1px;
+}
+
+.soundWaves {
+  position: absolute;
+  right: 0;
+  width: 6px;
+  height: 12px;
+  border: 2px solid #ddd;
+  border-left: none;
+  border-radius: 0 10px 10px 0;
+  opacity: 0.9;
+}
+
+.limitPopup {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 260px;
+  text-align: center;
+}
+
+.limitText {
+  font-size: 16px;
+  color: #eee;
+  margin: 0;
+}
+
+.limitSubtext {
+  font-size: 14px;
+  color: #999;
+  margin: 0 0 8px;
+}
+
+.iconLogout {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #ddd;
+  border-radius: 3px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+/* стрелка влево */
+.iconLogout::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 3px;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 2px;
+  background: #ddd;
+}
+
+.iconLogout::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 3px;
+  transform: translateY(-50%);
+  border-style: solid;
+  border-width: 4px 5px 4px 0;
+  border-color: transparent #ddd transparent transparent;
+}
